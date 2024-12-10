@@ -61,12 +61,18 @@ export default function App() {
 
   return (
     <>
-      <nav className="bg-[#d6e5f3] mx-[10%] flex items-center justify-between h-20">
-        <Link to="/">
-          <img src={logo} width="200px"></img>
-        </Link>
-        {authLink}
-      </nav>
+      <div className="bg-[#d6e5f3]" >
+
+        <nav className="
+
+        mx-[10%] 
+        flex items-center justify-between h-20">
+          <Link to="/">
+            <img src={logo} width="200px"></img>
+          </Link>
+          {authLink}
+        </nav>
+      </div>
 
       <Routes>
         <Route

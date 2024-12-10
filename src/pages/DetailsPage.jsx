@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import commentSection from "../components/CommentSection"
+import CommentSection from '../components/CommentSection'
 import clockIcon from '../assets/clock.svg'
 import phoneIcon from '../assets/telephone-fill.svg'
 import locationIcon from '../assets/geo-alt-fill.svg'

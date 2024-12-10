@@ -40,7 +40,7 @@ export default function HomePage({ cpas, refreshQueue, updateDetails }) {
   if (cpas.length > 0) {
     return (
       <>
-        <div className="my-24">
+        <div className="bg-[#d6e5f3] py-24">
           <h1 className="text-center md:text-4xl text-3xl font-medium">
             Find a CPA near you
           </h1>
@@ -48,7 +48,10 @@ export default function HomePage({ cpas, refreshQueue, updateDetails }) {
             Find, compare and book with highly-rated CPAs
           </h1>
           <div>
-            <form onSubmit={handleSubmit} className="mt-8 text-center">
+            <form
+              onSubmit={handleSubmit}
+              className="mt-8 text-center bg-[#d6e5f3]"
+            >
               <input
                 className="box-border p-2 w-3/5 rounded-md border border-gray-300 focus:outline-none focus:border-gray-500"
                 name="postcode"
@@ -81,7 +84,7 @@ export default function HomePage({ cpas, refreshQueue, updateDetails }) {
   } else {
     return (
       <>
-        <div className="my-24">
+        <div className="bg-[#d6e5f3] py-24">
           <h1 className="text-center md:text-4xl text-3xl font-medium">
             Find a CPA near you
           </h1>
