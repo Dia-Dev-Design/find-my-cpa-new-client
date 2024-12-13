@@ -36,7 +36,7 @@ export async function logIn(user) {
 /* AUTHORIZATION REQUESTS */
 export async function postComment(comment) {
   try {
-    let token = localStorage.getItem("authToken");
+    let token = localStorage.getItem("userToken");
     const authHeader = { headers: { Authorization: token } };
     const { data } = await axios.post(
       `${SERVER_URL}/comments`,
@@ -52,7 +52,7 @@ export async function postComment(comment) {
 
 export async function updateComment(comment, id) {
   try {
-    let token = localStorage.getItem("authToken");
+    let token = localStorage.getItem("userToken");
     const authHeader = { headers: { Authorization: token } };
     const { data } = await axios.put(
       `${SERVER_URL}/comments/${id}`,
@@ -68,7 +68,7 @@ export async function updateComment(comment, id) {
 
 export async function deleteComment(id) {
   try {
-    let token = localStorage.getItem("authToken");
+    let token = localStorage.getItem("userToken");
     const authHeader = { headers: { Authorization: token } };
 
     const { data } = await axios.delete(

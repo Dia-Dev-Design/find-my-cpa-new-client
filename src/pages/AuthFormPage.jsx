@@ -12,7 +12,7 @@ export default function AuthFormPage({ setLoginStatus }) {
   const navigate = useNavigate();
 
   const handleInputChange = (event) => {
-    setFormData({ ...formData, [event.target.name]: event.target.value });
+    setFormData((prev) => ({ ...prev, [event.target.name]: event.target.value }));
   };
 
   // Execute auth logic on form submit
@@ -21,12 +21,12 @@ export default function AuthFormPage({ setLoginStatus }) {
     event.preventDefault();
     // check what the URL parameter is to determine what request to make
     if (formType === "login") {
-      const { token } = await logIn(formData);
-      localStorage.setItem("userToken", token);
+      const { userToken } = await logIn(formData);
+      localStorage.setItem("userToken", userToken);
       setLoginStatus(true);
     } else {
-      const { token } = await signUp(formData);
-      localStorage.setItem("userToken", token);
+      const { userToken } = await signUp(formData);
+      localStorage.setItem("userToken", userToken);
       setLoginStatus(true);
     }
     // redirect to the home page after signing/logging in
