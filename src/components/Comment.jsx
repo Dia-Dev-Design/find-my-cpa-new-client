@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { updateComment, deleteComment } from "../services/backend";
+import { updateComment, deleteComment } from "../services/commentService";
 
 export default function Comment({ data, refreshComments }) {
   const [showEditForm, setShowEditForm] = useState(false);

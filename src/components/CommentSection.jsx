@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { postComment, getComments } from "../services/backend";
+import { postComment, getComments } from "../services/commentService";
 import Comment from "./Comment";
 
 export default function commentSection({ cpaId }) {

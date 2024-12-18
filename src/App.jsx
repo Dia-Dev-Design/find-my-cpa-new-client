@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Routes, Route, Link } from "react-router-dom";
+import { AuthContext } from "./context/AuthContext";
 import axios from 'axios'
 import './App.css'
 // import Card from "./components/Card";
@@ -12,15 +13,16 @@ import logo from '../src/assets/logo.png'
 
 
 export default function App() {
+
+  const { user } = useContext(AuthContext)
   // Store API data here
   const [cpas, setCpas] = useState([]);
-  const [detailsData, setDetailsData] = useState({});
-  const [loginStatus, setLoginStatus] = useState(false)
+  const [detailsData, setDetailsData] = useState(null);
+  const [loginStatus, setLoginStatus] = useState(user);
 
   // Define an async function to JSONify the query response
   async function getData(url) {
-    const res = await fetch(url);
-    const data = await res.json();
+    const { data } = await axios.get(url);
     setCpas([])
     setCpas(cpas => cpas.concat(data.features))
   }
@@ -32,9 +34,9 @@ export default function App() {
         import.meta.env.VITE_CPA_KEY
       }&categories=office.accountant&filter=place:51d9d1938d628052c0595938a4ac3a5b4440f00101f90121af020000000000c00208`
     );
-    if (localStorage.getItem('userToken')) {
-      setLoginStatus(true)
-    }
+    // if (localStorage.getItem('userToken')) {
+    //   setLoginStatus(true)
+    // }
   }, []);
 
   // console.log(cpas)

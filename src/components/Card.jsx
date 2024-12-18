@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getComments } from "../services/backend";
+import { getComments } from "../services/commentService";
 import "./Card.css";
 import starIcon from "../assets/star-fill.svg";
 
